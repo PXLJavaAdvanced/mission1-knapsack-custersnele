@@ -1,6 +1,8 @@
 package be.pxl.ja.robbery;
 
-public class Product implements Comparable<Product>{
+import be.pxl.ja.knapsack.KnapsackItem;
+
+public class Product implements Comparable<Product>, KnapsackItem {
     private String name;
     private double weight;
     private double price;
@@ -46,7 +48,6 @@ public class Product implements Comparable<Product>{
 
     @Override
     public int compareTo(Product product) {
-        System.out.println("Comparing " + this.getName() + " with " + product.getName());
         return Double.compare(product.price, this.price);
     }
 }
